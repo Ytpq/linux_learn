@@ -43,6 +43,70 @@
 	1.20 core scheduling(调度) for smt （Simultaneous（同时） Multi threading（多线程））超线程  //安全性，同时可以提高稳定性 --保持同一组核心跑同一个任务
 	1.21 cpu/task time and stats accounting (任务时间和统计记录)
 	    1.21.1
+		      1.21.1.1
+			  1.21.1.2
+		1.21.2
+		1.21.3
+		1.21.4
+		1.21.5
+		1.21.6
+		1.21.7
+		1.21.8
+		1.21.9
+		1.21.10
+	1.22 cpu isolation  //cpu的隔离技术
+	1.23 rcu subsystem //（Read-Copy-Update ）同步机制 ，读写时可以同时进行
+	    1.23.1
+		1.23.2
+		1.23.3
+		...
+	
+	
+	
+	1.24  <M> Kernel .config support // M代表可以卸载 Y表示内置 N表示直接没有
+	1.25 enable access to .config through /proc/config.gz //可以查看内核的配置文件 在系统中
+	1.26 enable kernel deaders through /sys/kernel/kheaders.tar.xz //提供内核头文件的接口，方便调用内核函数
+	1.27 （17）kernel log buffer(缓冲) size (16 => 64kb, 17=>128kb) //内核日志缓冲区大小 --影响内存
+	1.28 （12）cpu kernel log buffer size contribution (13=>8kb, 17=>128kb) //单个cpu设置内核日志缓冲区大小 --多cpu记录内核，此可更加颗粒化
+	1.29 Printk（打印） indexing（索引） debugfs（调试文件系统） interface（界面）//提供日志的索引。可以过滤
+	1.30 scheduler(调度) features 
+	    1.30.1 enable utilization(利用率) clamping（限制） for rt（实时调度）/fair（公平调度） task  //cpu任务的调用机制
+		      1.30.1.1 
+		1.31 menory placement aware(意识到的) numa（非统一内存访问） scheduler //cpu-内存 亲和性，将任务所使用的cpu和内存节点一致，靠经
+		1.32 control group support //更为强大的对进程对cpu，内存，io的限制和资源优先级别
+		    1.32.1
+			1.32.2
+			.....
+	1.31 namespace support //隔离，全局系统资源划分多个隔离空间
+	    1.31.1
+		1.31.2
+		1.31.3
+		....
+	1.32 Checkpoint/restore(恢复) support //进程迁移，容器迁移
+	1.33 automatic process group scheduling  //进程组机制
+	1.34 Kernel->user space relay support (formerly relayfs) //内核向用户空间传递大量数据的高速通道
+	1.35 Initial RAM filesystem and RAM disk (initramfs/initrd) support //开启临时根文件支持
+-        1.35.1 initramfs source file(s) //引导内核加载initramfs文件，当作临时根文件
+    1.36 upport initial ramdisk/ramfs compressed using gzip  
+	1.37 Support initial ramdisk/ramfs compressed using bzip2
+	1.38 Support initial ramdisk/ramfs compressed using LZMA 
+	1.39 Support initial ramdisk/ramfs compressed using XZ
+	1.40 Support initial ramdisk/ramfs compressed using LZO
+	1.41 Support initial ramdisk/ramfs compressed using LZ4
+	1.42 Support initial ramdisk/ramfs compressed using ZSTD
+	1.43 boot config support //内核启动时加载的一个配置文件，用于动态启动参数
+	1.44 Preserve cpio archive mtimes in initramfs //保持initramfs的修改时间
+    1.45 Compiler optimization level  //编译器优化级别
+		1.45.1 Optimize for size (-Os) //无优化。调试用
+        1.45.2 Optimize for performance (-O2) 最高优化，默认		
+	1.46 configure standard kernel feature // 内核的标准功能设置
+	    1.46.1
+		1.46.2
+		......
+	1.47 Enable madvise/fadvise syscalls //内存/文件优化
+	1.48 Enable membarrier() system call // 
+	    
+		
 		
 		
 	
