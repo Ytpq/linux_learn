@@ -104,11 +104,32 @@
 		1.46.2
 		......
 	1.47 Enable madvise/fadvise syscalls //内存/文件优化
-	1.48 Enable membarrier() system call // 
-	    
+	1.48 Enable membarrier(内存屏障) system call //内存一致性和正确同步
+    1.49 Enable kcmp() system call  //比较两个进程之间的内核资源是否共享
+	1.50 Enable rseq() system call //Restartable Sequences，可重启序列，无需内核让线程操控cpu
+	1.51 Enable debugging of rseq() system call //引入日志和检查对1.50
+	1.51 Enable cachestat() system call //查询文件在页缓存中的缓存状态
+	1.52 PC/104 support //启用对 PC/104 总线设备的识别与驱动支持  --嵌入式工业总线
+	1.53 Load all symbols for debugging/ksymoops  //也是内核调试
+	1.54 Test the basic functions and performance of kallsyms //测试 kallsyms 的基本功能和性能
+	1.55 include all symbols in kallsyms //内核会导出所有符号，包括未导出的内部符号、静态符号等 
+	1.56 Kernel Performance Events And Counters  //统计cpu数据，系统数据
+	    1.56.1 Debug: use vmalloc to back perf mmap() buffers  //主要用于调试内存分配失败或碎片化问题
+	1.57 Profiling support  //性能分析，cpu等
+	1.58 Kexec and crash features  //在重启时，直接把内核放在内存中加载 --快
+	    1.58.1 Enable kexec system call   //传统
+		1.58.2 Enable kexec file based system call  //现代
+		       1.58.2.1  Verify kernel signature during kexec_file_load() syscall (NEW)  // 验证内核签名
+			   1.58.2.2 kernel crash dumps (NEW) //内核崩溃存储内存快照
+			   1.58.2.3 Update the crash elfcorehdr on system configuration changes (NEW) //系统配置变化，自动更新崩溃内存信
+
+2. 64-bit kernel
+
+3. Processor type and features
+    3.1 	
 		
 		
-		
+		 
 	
 
 	   
